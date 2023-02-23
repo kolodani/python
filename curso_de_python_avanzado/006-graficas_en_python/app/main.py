@@ -3,15 +3,12 @@ import read_csv
 import charts
 
 def run():
-    data = read_csv.read_csv('curso_de_python_avanzado/006-graficas_en_python/app/data.csv')
-    country = input('Type Country => ')
+    data = read_csv.read_csv('curso_de_python_avanzado/006-graficas_en_python/app2/data.csv')
+    data = list(filter(lambda item : item['Continent'] == 'South America', data))
 
-    result = utils.population_by_country(data, country)
-
-    if len(result) > 0:
-        country = result[0]
-        labels, values = utils.get_population(country)
-        charts.genereta_bar_chart(labels, values)
+    countries = list(map(lambda x: x['Country'], data))
+    percentages = list(map(lambda x: x['World Population Percentage'], data))
+    charts.genereate_pie_chart(countries, percentages)
 
 if __name__ == '__main__':
     run()
