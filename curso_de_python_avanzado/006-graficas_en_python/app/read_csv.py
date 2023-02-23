@@ -12,5 +12,6 @@ def read_csv(path):
         return data
 
 if __name__=='__main__':
-    data = read_csv('curso_de_python_avanzado/005-manipulacion_de_archivos_y_errores/app/data.csv')
+    data = read_csv(
+        'curso_de_python_avanzado/006-graficas_en_python/app/data.csv')
     print(data[0])
